@@ -15,7 +15,7 @@ class WPSS_WpSus_Widget extends WP_Widget {
 		
 		$widget_opts = array(
 			'classname' => 'wpss-wpsus-widget',
-			'description' => 'Display a wp sus instance in the widgets area.'
+			'description' => 'Display a wp super slider instance in the widgets area.'
 		);
 		
 		parent::__construct( 'wpss-wpsus-widget', 'wp sus', $widget_opts );
