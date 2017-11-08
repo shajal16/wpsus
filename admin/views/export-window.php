@@ -17,8 +17,7 @@
                     
                     <div class="info-content">
                         <p><?php _e( 'The text above represents the data of the slider. Please copy the text and then paste it in the import slider window, by clicking on the <i>Import Slider</i> button in the <i>wp sus</i> installation where you want to import the slider.', 'wpsus' ); ?></p>
-                        <p><a href="https://www.youtube.com/watch?v=CoBpGNGj3G8&list=PLh-6IaZNuPo4MHvfzrTovXRuU7WKXkfWh" target="_blank"><?php _e( 'See the video tutorial', 'wpsus' ); ?> &rarr;</a></p>
-                    </div>
+                     </div>
                 </div>
         <?php
             }

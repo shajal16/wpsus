@@ -2,12 +2,12 @@
 
 /*
 Plugin Name: Wp Super Slider
-Plugin URI:  http://shajal16.com/wp-super-slider
+Plugin URI:  http://shajal16.com/wpsus
 Description: A awesome slider that will make your site look awesome.
 Version:     1.0.2
 Author:      K.H Shajal
 Author URI:  http://shajal16.com
-Text Domain: Wp-Super-Slider
+Text Domain: wpsus
 Domain Path: /languages
 Requires at least: wordpress 3.6.0
 Tested up to: WordPress 4.8.2

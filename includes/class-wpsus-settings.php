@@ -1206,7 +1206,7 @@ class WPSS_WpSus_Settings {
 						'inline' => __( 'Inline', 'wpsus' ),
 						'in_files' => __( 'In files', 'wpsus' )
 					),
-					'description' => __( 'You may wish to create you custom CSS style sheet or JS file to control sliders, files will be automatically craeted if not you may b asked for admin credentials sometimes which is due to wp admin this plugin has nothing to do with it.' , 'wpsus' )
+					'description' => __( 'You may wish to create you custom CSS style sheet or JS file to control sliders, files will be automatically created if not you may b asked for admin credentials sometimes which is due to wp admin this plugin has nothing to do with it.' , 'wpsus' )
 				),
 				'load_js_in_all_pages' => array(
 					'label' => __( 'Load JS files on all pages', 'wpsus' ),

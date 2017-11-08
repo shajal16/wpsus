@@ -1,5 +1,5 @@
 <div class="wrap wpsus-admin">
-	<h2><?php _e( 'Custom CSS and JavaScript', 'wpsus' ); ?></h2>
+	<h2><?php _e( 'Custom JAVA script & CSS', 'wpsus' ); ?></h2>
     
     <?php
         $hide_info = get_option( 'wpsus_hide_inline_info' );
@@ -15,8 +15,7 @@
                 <p><?php _e( 'The fields below can be used for all your custom CSS or JavaScript code.', 'wpsus' ); ?></p>
                 <p><?php _e( 'If you want to target a specific slider, you need to assign a <i>Custom Class</i> to the slider, in the slider\'s settings, and then use that custom class in the <i>Custom CSS</i> or <i>Custom JavaScript</i> fields below.', 'wpsus' ); ?></p>
                 <p><?php _e( 'By default, the custom CSS and JavaScript code will be loaded inline, but in the', 'wpsus' ); ?> <a href="<?php echo admin_url('admin.php?page=wpsus-settings') ?>"><?php _e( 'Plugin Settings', 'wpsus' ); ?></a> <?php _e( 'page you can set to load the code in files instead of inline.', 'wpsus' ); ?></p>
-                <p><a href="https://www.youtube.com/watch?v=y_XeEjplSdo&list=PLh-6IaZNuPo4MHvfzrTovXRuU7WKXkfWh" target="_blank"><?php _e( 'See the video tutorial', 'wpsus' ); ?> &rarr;</a></p>
-            </div>
+                </div>
         </div>
     <?php
         }

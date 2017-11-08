@@ -114,14 +114,14 @@ class WPSS_WpSus_Admin {
 
 		if ( in_array( $screen->id, $this->plugin_screen_hook_suffixes ) ) {
 			if ( get_option( 'wpsus_load_unminified_scripts' ) == true ) {
-				wp_enqueue_style( $this->plugin_slug . '-admin-style', plugins_url( 'wpsus/admin/assets/css/wpsus-admin.css' ), array(), WPSS_WpSus::VERSION );
-				wp_enqueue_style( $this->plugin_slug . '-plugin-style', plugins_url( 'wpsus/public/assets/css/wp-sus.css' ), array(), WPSS_WpSus::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-admin-style', plugins_url( '../admin/assets/css/wpsus-admin.css',__FILE__ ), array(), WPSS_WpSus::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-plugin-style', plugins_url( '../public/assets/css/wp-sus.css',__FILE__ ), array(), WPSS_WpSus::VERSION );
 			} else {
-				wp_enqueue_style( $this->plugin_slug . '-admin-style', plugins_url( 'wpsus/admin/assets/css/wpsus-admin.min.css' ), array(), WPSS_WpSus::VERSION );
-				wp_enqueue_style( $this->plugin_slug . '-plugin-style', plugins_url( 'wpsus/public/assets/css/wp-sus.min.css' ), array(), WPSS_WpSus::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-admin-style', plugins_url( '../admin/assets/css/wpsus-admin.min.css',__FILE__ ), array(), WPSS_WpSus::VERSION );
+				wp_enqueue_style( $this->plugin_slug . '-plugin-style', plugins_url( '../public/assets/css/wp-sus.min.css',__FILE__ ), array(), WPSS_WpSus::VERSION );
 			}
 
-			wp_enqueue_style( $this->plugin_slug . '-lightbox-style', plugins_url( 'wpsus/public/assets/libs/fancybox/jquery.fancybox.css' ), array(), WPSS_WpSus::VERSION );
+			wp_enqueue_style( $this->plugin_slug . '-lightbox-style', plugins_url( '../public/assets/libs/fanbox/jquery.fanbox.css',__FILE__ ), array(), WPSS_WpSus::VERSION );
 
 			if ( get_option( 'wpsus_is_custom_css') == true ) {
 				if ( get_option( 'wpsus_load_custom_css_js' ) === 'in_files' ) {
@@ -166,14 +166,14 @@ class WPSS_WpSus_Admin {
 			}
 			
 			if ( get_option( 'wpsus_load_unminified_scripts' ) == true ) {
-				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'wpsus/admin/assets/js/wpsus-admin.js' ), array( 'jquery' ), WPSS_WpSus::VERSION );
-				wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'wpsus/public/assets/js/jquery.wpSus.js' ), array( 'jquery' ), WPSS_WpSus::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( '../admin/assets/js/wpsus-admin.js',__FILE__ ), array( 'jquery' ), WPSS_WpSus::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( '../public/assets/js/jquery.wpSus.js',__FILE__ ), array( 'jquery' ), WPSS_WpSus::VERSION );
 			} else {
-				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'wpsus/admin/assets/js/wpsus-admin.min.js' ), array( 'jquery' ), WPSS_WpSus::VERSION );
-				wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( 'wpsus/public/assets/js/jquery.wpSus.min.js' ), array( 'jquery' ), WPSS_WpSus::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( '../admin/assets/js/wpsus-admin.min.js',__FILE__ ), array( 'jquery' ), WPSS_WpSus::VERSION );
+				wp_enqueue_script( $this->plugin_slug . '-plugin-script', plugins_url( '../public/assets/js/jquery.wpSus.min.js',__FILE__ ), array( 'jquery' ), WPSS_WpSus::VERSION );
 			}
 
-			wp_enqueue_script( $this->plugin_slug . '-lightbox-script', plugins_url( 'wpsus/public/assets/libs/fancybox/jquery.fancybox.pack.js' ), array(), WPSS_WpSus::VERSION );
+			wp_enqueue_script( $this->plugin_slug . '-lightbox-script', plugins_url( '../public/assets/libs/fanbox/jquery.fanbox.pack.js',__FILE__ ), array(), WPSS_WpSus::VERSION );
 
 			if ( get_option( 'wpsus_is_custom_js' ) == true && get_option( 'wpsus_load_custom_css_js' ) === 'in_files' ) {
 				global $blog_id;
@@ -196,12 +196,12 @@ class WPSS_WpSus_Admin {
 			wp_localize_script( $this->plugin_slug . '-admin-script', 'sp_js_vars', array(
 				'admin' => admin_url( 'admin.php' ),
 				'ajaxurl' => admin_url( 'admin-ajax.php' ),
-				'plugin' => plugins_url( 'wpsus' ),
+				'plugin' => plugins_url( __FILE__ ),
 				'page' => isset( $_GET['page'] ) && ( $_GET['page'] === 'wpsus-new' || ( isset( $_GET['id'] ) && isset( $_GET['action'] ) && $_GET['action'] === 'edit' ) ) ? 'single' : 'all',
 				'id' => $id,
 				'lad_nonce' => wp_create_nonce( 'load-slider-data' . $id ),
 				'sa_nonce' => wp_create_nonce( 'save-slider' . $id ),
-				'no_image' => __( 'Click to add image', 'wpsus' ),
+				'no_image' => __( 'Click to add image ', 'wpsus' ),
 				'posts_slides' => __( 'Posts slides', 'wpsus' ),
 				'gallery_slides' => __( 'Gallery slides', 'wpsus' ),
 				'flickr_slides' => __( 'Flickr slides', 'wpsus' ),
@@ -237,7 +237,7 @@ class WPSS_WpSus_Admin {
 			$access,
 			$this->plugin_slug,
 			array( $this, 'render_slider_page' ),
-			plugins_url( '/wpsus/admin/assets/css/images/sp-icon.png' )
+			plugins_url( '../admin/assets/css/images/sp-icon.png',__FILE__ )
 		);
 
 		if ( ! in_array( $this->plugin_slug, $restricted_pages ) ) {
@@ -262,7 +262,16 @@ class WPSS_WpSus_Admin {
 			);
 		}
 
-
+		if ( ! in_array( $this->plugin_slug . '-custom', $restricted_pages ) ) {
+			$this->plugin_screen_hook_suffixes[] = add_submenu_page(
+				$this->plugin_slug,
+				__( 'Custom CSS and JavaScript', $this->plugin_slug ),
+				__( 'WPSUS Custom JS/CSS', $this->plugin_slug ),
+				$access,
+				$this->plugin_slug . '-custom',
+				array( $this, 'render_custom_css_js_page' )
+			);
+		}
 
 		if ( ! in_array( $this->plugin_slug . '-settings', $restricted_pages ) ) {
 			$this->plugin_screen_hook_suffixes[] = add_submenu_page(
@@ -349,7 +358,7 @@ class WPSS_WpSus_Admin {
 			check_admin_referer( 'custom-css-js-update', 'custom-css-js-nonce' );
 
 			if ( isset( $_POST['custom_css'] ) ) {
-				$custom_css = $_POST['custom_css'];
+				$custom_css = wp_filter_nohtml_kses($_POST['custom_css']);
 				update_option( 'wpsus_custom_css', $custom_css );
 
 				if ( $custom_css !== '' ) {
@@ -360,7 +369,7 @@ class WPSS_WpSus_Admin {
 			}
 
 			if ( isset( $_POST['custom_js'] ) ) {
-				$custom_js = $_POST['custom_js'];
+				$custom_js =wp_filter_nohtml_kses($_POST['custom_js']);
 				update_option( 'wpsus_custom_js', $custom_js );
 
 				if ( $custom_js !== '' ) {
@@ -495,7 +504,7 @@ class WPSS_WpSus_Admin {
 	 * @since 1.0.0
 	 */
 	public function render_documentation_page() {
-		echo '<iframe class="wpsus-documentation" src="' . plugins_url( 'wpsus/documentation/documentation.html' ) . '" width="100%" height="100%"></iframe>';
+		echo '<iframe class="wpsus-documentation" src="' . plugins_url( '../documentation/documentation.html',__FILE__ ) . '" width="100%" height="100%"></iframe>';
 	}
 
 	/**
@@ -550,7 +559,7 @@ class WPSS_WpSus_Admin {
 	 */
 	public function ajax_get_slider_data() {
 		$nonce = $_GET['nonce'];
-		$id = $_GET['id'];
+		$id = intval($_GET['id']);
 
 		if ( ! wp_verify_nonce( $nonce, 'load-slider-data' . $id ) ) {
 			die( 'This action was stopped for security purposes.' );
@@ -747,9 +756,9 @@ class WPSS_WpSus_Admin {
 	 */
 	public function ajax_update_presets() {
 		$nonce = $_POST['nonce'];
-		$method = $_POST['method'];
-		$name = $_POST['name'];
-		$settings = $_POST['settings'];
+		$method = wp_filter_post_kses($_POST['method']);
+		$name = wp_filter_post_kses($_POST['name']);
+		$settings = wp_filter_post_kses($_POST['settings']);
 
 		if ( ! wp_verify_nonce( $nonce, 'update-presets' ) ) {
 			die( 'This action was stopped for security purposes.' );

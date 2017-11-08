@@ -4,8 +4,8 @@ if ( class_exists( 'WPSS_Flickr' ) === false ) {
 	class WPSS_Flickr {
 
 		protected $rest = 'https://api.flickr.com/services/rest/';
-
-		protected $api_key = '';
+		//protected $rest = wp_remote_get('https://api.flickr.com/services/rest/');
+	 	protected $api_key = '';
 
 		protected $photo_sizes = array(
 			'square' => '_s',

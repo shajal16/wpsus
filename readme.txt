@@ -1,11 +1,12 @@
 === WP SUPER SLIDER  ===
 Contributors: Kamal Hossain Shajal
+Donate link: https://shajal16.com/donate-me
 Requires at least: 3.6
-Tested up to: 4.6
-Stable tag: 1.2
+Tested up to: 4.8
+Stable tag: 3.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: slider, responsive slider, touch slider, slider, images, image slider, plugin, widget, wordpress slider, responsive wordpress slider, shortcode, slider plugin, touch swipe, best slider, wp, slide imager, slider image, best, sliding
+Tags: slider, responsive slider, touch slider, slider, images, image slider, plugin, widget, wordpress slider, responsive wordpress slider, shortcode, slider plugin, touch swipe, best slider, wp, slide imager, slider image, best, sliding, wordpress slideshow,seo,slideshow,slider,widget,wordpress slider,image slider,flexslider,flex slider,nivoslider,nivo slider,responsive,responsive slides,coinslider,coin slider,slideshow,carousel,responsive slider,vertical slides
 
 WP Super Slider Fully responsive slider plugin for WordPress.
 

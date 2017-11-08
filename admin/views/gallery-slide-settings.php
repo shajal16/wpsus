@@ -14,7 +14,6 @@
                     <p><?php _e( 'One <i>Gallery</i> slide in the admin area will dynamically generate multiple slides in the published slider (one slide for each image from the <i>[gallery]</i> shortcode).', 'wpsus' ); ?></p>
                     <p><?php _e( 'You just need to drop the slider shortcode in a post that contains a <i>[gallery]</i> shortcode, and the images from the <i>[gallery]</i> will automatically be loaded in the slider. Then, if you want to hide the original gallery, you can add the <i>hide</i> attribute to the <i>[gallery]</i> shortcode: <i>[gallery ids="1,2,3" hide="true"]</i>.', 'wpsus' ); ?></p>
                     <p><?php _e( 'The images and their data can be fetched through <i>dynamic tags</i>, which are enumerated in the Main Image, Layers and HTML editors.', 'wpsus' ); ?></p>
-                    <p><a href="https://www.youtube.com/watch?v=Bj8xSH-sScY&list=PLh-6IaZNuPo4MHvfzrTovXRuU7WKXkfWh" target="_blank"><?php _e( 'See the video tutorial', 'wpsus' ); ?> &rarr;</a></p>
                 </div>
             </div>
         <?php

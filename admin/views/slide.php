@@ -7,7 +7,7 @@
 				if ( $slide_image !== '' ) {
 					echo '<img src="' . esc_url( $slide_image ) . '" />';
 				} else {
-					echo '<p class="no-image">' . __( 'Click to add image', 'wpsus' ) . '</p>';
+					echo '<p class="no-image">' . __( 'Click to add image / Edit from bottom menu', 'wpsus' ) . '</p>';
 				}
 			} else if ( $slide_type === 'posts' ) {
 				echo '<p>[ ' . __( 'Posts Slides', 'wpsus' ) . ' ]</p>';

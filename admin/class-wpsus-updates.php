@@ -34,9 +34,7 @@ class WPSS_WpSus_Updates {
 	public function __construct() {
 		$this->db_version = get_option( 'wpsus_version', '1.0.0' );
 
-		if ( class_exists( 'WPSS_WpSus_Lite' ) ) {
-			deactivate_plugins( 'wpsus-lite/wpsus-lite.php' );
-		}
+		
 
 		if ( version_compare( $this->db_version, WPSS_WpSus::VERSION, '>=' ) ) {
 			return;

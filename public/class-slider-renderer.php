@@ -323,7 +323,7 @@ class WPSS_SP_Slider_Renderer {
 							"\r\n" . '				var sliderInstance = $( "#' . $this->idAttribute . '" ).data( "wpSus" ),' .
 							"\r\n" . '					isAutoplay = sliderInstance.settings.autoplay;' .
 							"\r\n" .
-							"\r\n" . '				$.fancybox.open( $( "#' . $this->idAttribute . ' .sp-image" ).parent( "a" ), {' .
+							"\r\n" . '				$.fanbox.open( $( "#' . $this->idAttribute . ' .sp-image" ).parent( "a" ), {' .
 							"\r\n" . '					index: $( this ).parents( ".sp-slide" ).index(),' .
 							"\r\n" . '					afterShow: function() {' .
 							"\r\n" . '						if ( isAutoplay === true ) {' .

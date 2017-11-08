@@ -4,7 +4,7 @@
 		
 
 			<h3><?php _e( 'Welcome', 'wpsus' ); ?></h3>
-			<p><?php _e( 'Welcome and Thanks for using WP Super Slider, For installation help you can visit: ', 'wpsus' ); ?><a href="http://shajal16.com/wp-super-slider" target="_blank">www.shajal16.com/wp-super-slider</a>. </p>
+			<p><?php _e( 'Welcome and Thanks for using WP Super Slider, For installation help you can visit: ', 'wpsus' ); ?><a href="http://shajal16.com/wpsus" target="_blank">www.shajal16.com/wpsus</a>. </p>
 			
 		
 
@@ -13,7 +13,6 @@
 <div class="new-slider-buttons">    
 		<a class="button-secondary" href="<?php echo admin_url( 'admin.php?page=wpsus-new' ); ?>"><?php _e( 'Create New Slider', 'wpsus' ); ?></a>
 		<a class="button-secondary import-slider" href=""><?php _e( 'Import Slider', 'wpsus' ); ?></a>
-		
 		<a class="button-secondary" href="<?php echo admin_url( 'admin.php?page=wpsus-custom' ); ?>"><?php _e( 'Custom JS and CSS', 'wpsus' ); ?></a>
 		<a class="button-secondary" href="<?php echo admin_url( 'admin.php?page=wpsus-settings' ); ?>"><?php _e( 'WPSUS Settings', 'wpsus' ); ?></a>
 		
