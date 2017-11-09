@@ -460,7 +460,7 @@ class WPSS_WpSus_Admin {
 			}
 
 			if ( isset( $_POST['access'] ) ) {
-				$access = $_POST['access'];
+				$access =wp_filter_nohtml_kses($_POST['access']);
 				update_option( 'wpsus_access', $access );
 			}
 		}
@@ -472,7 +472,7 @@ class WPSS_WpSus_Admin {
 			check_admin_referer( 'activatewp-pluginok-update', 'activatewp-pluginok-nonce' );
 
 			if ( isset( $_POST['activatewp_pluginok'] ) ) {
-				$activatewp_pluginok = $_POST['activatewp_pluginok'];
+				$activatewp_pluginok = wp_filter_nohtml_kses($_POST['activatewp_pluginok']);
 				update_option( 'wpsus_activatewp_pluginok', $activatewp_pluginok );
 
 				if ( $_POST['activatewp_pluginok'] === '' ) {
@@ -755,7 +755,7 @@ class WPSS_WpSus_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_update_presets() {
-		$nonce = $_POST['nonce'];
+		$nonce =wp_filter_nohtml_kses( $_POST['nonce']);
 		$method = wp_filter_post_kses($_POST['method']);
 		$name = wp_filter_post_kses($_POST['name']);
 		$settings = wp_filter_post_kses($_POST['settings']);
@@ -825,8 +825,8 @@ class WPSS_WpSus_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_duplicate_slider() {
-		$nonce = $_POST['nonce'];
-		$original_slider_id = $_POST['id'];
+		$nonce = wp_filter_nohtml_kses($_POST['nonce']);
+		$original_slider_id = intval($_POST['id']);
 
 		if ( ! wp_verify_nonce( $nonce, 'duplicate-slider' . $original_slider_id ) ) {
 			die( 'This action was stopped for security purposes.' );
@@ -857,7 +857,7 @@ class WPSS_WpSus_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_delete_slider() {
-		$nonce = $_POST['nonce'];
+		$nonce = wp_filter_nohtml_kses($_POST['nonce']);
 		$id = intval( $_POST['id'] );
 
 		if ( ! wp_verify_nonce( $nonce, 'delete-slider' . $id ) ) {
@@ -898,7 +898,7 @@ class WPSS_WpSus_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_export_slider() {
-		$nonce = $_POST['nonce'];
+		$nonce = wp_filter_nohtml_kses($_POST['nonce']);
 		$id = intval( $_POST['id'] );
 
 		if ( ! wp_verify_nonce( $nonce, 'export-slider' . $id ) ) {
@@ -1028,7 +1028,7 @@ class WPSS_WpSus_Admin {
 	public function ajax_load_caption_editor() {
 		$slide_default_settings = WPSS_WpSus_Settings::getSlideSettings();
 
-		$caption_content = $_POST['data'];
+		$caption_content = wp_filter_nohtml_kses($_POST['data']);
 		$content_type = isset( $_POST['content_type'] ) ? $_POST['content_type'] : $slide_default_settings['content_type']['default_value'];
 
 		include( 'views/caption-editor.php' );
@@ -1044,7 +1044,7 @@ class WPSS_WpSus_Admin {
 	public function ajax_load_html_editor() {
 		$slide_default_settings = WPSS_WpSus_Settings::getSlideSettings();
 
-		$html_content = $_POST['data'];
+		$html_content = wp_filter_nohtml_kses($_POST['data']);
 		$content_type = isset( $_POST['content_type'] ) ? $_POST['content_type'] : $slide_default_settings['content_type']['default_value'];
 
 		include( 'views/html-editor.php' );
@@ -1079,8 +1079,8 @@ class WPSS_WpSus_Admin {
 	 */
 	public function ajax_add_layer_settings() {
 		$layer = array();
-		$layer_id = $_POST['id'];
-		$layer_type = $_POST['type'];
+		$layer_id = intval($_POST['id']);
+		$layer_type = wp_filter_nohtml_kses($_POST['type']);
 		$layer_settings;
 
 		if ( isset( $_POST['settings'] ) ) {
@@ -1088,27 +1088,27 @@ class WPSS_WpSus_Admin {
 		}
 
 		if ( isset( $_POST['text'] ) ) {
-			$layer['text'] = $_POST['text'];
+			$layer['text'] =wp_filter_nohtml_kses($_POST['text']);
 		}
 
 		if ( isset( $_POST['heading_type'] ) ) {
-			$layer['heading_type'] = $_POST['heading_type'];
+			$layer['heading_type'] = wp_filter_nohtml_kses($_POST['heading_type']);
 		}
 
 		if ( isset( $_POST['image_source'] ) ) {
-			$layer['image_source'] = $_POST['image_source'];
+			$layer['image_source'] = wp_filter_nohtml_kses($_POST['image_source']);
 		}
 
 		if ( isset( $_POST['image_alt'] ) ) {
-			$layer['image_alt'] = $_POST['image_alt'];
+			$layer['image_alt'] = wp_filter_nohtml_kses($_POST['image_alt']);
 		}
 
 		if ( isset( $_POST['image_link'] ) ) {
-			$layer['image_link'] = $_POST['image_link'];
+			$layer['image_link'] = wp_filter_nohtml_kses($_POST['image_link']);
 		}
 
 		if ( isset( $_POST['image_retina'] ) ) {
-			$layer['image_retina'] = $_POST['image_retina'];
+			$layer['image_retina'] = wp_filter_nohtml_kses($_POST['image_retina']);
 		}
 
 		$layer_default_settings = WPSS_WpSus_Settings::getLayerSettings();
@@ -1145,7 +1145,7 @@ class WPSS_WpSus_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_load_content_type_settings() {
-		$type = $_POST['type'];
+		$type = wp_filter_nohtml_kses($_POST['type']);
 		$slide_settings = json_decode( stripslashes( $_POST['data'] ), true );
 
 		echo $this->load_content_type_settings( $type, $slide_settings );
@@ -1406,7 +1406,7 @@ class WPSS_WpSus_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_clear_all_cache() {
-		$nonce = $_POST['nonce'];
+		$nonce = wp_filter_nohtml_kses($_POST['nonce']);
 
 		if ( ! wp_verify_nonce( $nonce, 'clear-all-cache' ) ) {
 			die( 'This action was stopped for security purposes.' );
