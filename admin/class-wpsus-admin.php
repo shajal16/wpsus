@@ -413,12 +413,12 @@ class WPSS_WpSus_Admin {
 			check_admin_referer( 'plugin-settings-update', 'plugin-settings-nonce' );
 
 			if ( isset( $_POST['load_stylesheets'] ) ) {
-				$load_stylesheets = $_POST['load_stylesheets'];
+				$load_stylesheets =wp_filter_nohtml_kses($_POST['load_stylesheets']);
 				update_option( 'wpsus_load_stylesheets', $load_stylesheets );
 			}
 
 			if ( isset( $_POST['load_custom_css_js'] ) ) {
-				$load_custom_css_js = $_POST['load_custom_css_js'];
+				$load_custom_css_js = wp_filter_nohtml_kses($_POST['load_custom_css_js']);
 				update_option( 'wpsus_load_custom_css_js', $load_custom_css_js );
 			}
 
@@ -439,7 +439,7 @@ class WPSS_WpSus_Admin {
 			}
 
 			if ( isset( $_POST['cache_expiry_interval'] ) ) {
-				$cache_expiry_interval = $_POST['cache_expiry_interval'];
+				$cache_expiry_interval = intval($_POST['cache_expiry_interval']);
 				update_option( 'wpsus_cache_expiry_interval', $cache_expiry_interval );
 			}
 
@@ -787,9 +787,9 @@ class WPSS_WpSus_Admin {
 	 * @since 1.0.0
 	 */
 	public function ajax_get_preset_settings() {
-		$name = $_GET['name'];
+		$name = sanitize_text_field($_GET['name']);
 
-		$presets = get_option( 'wpsus_setting_presets' );
+		$presets =esc_html(get_option( 'wpsus_setting_presets' ));
 
 		if ( isset( $presets[ $name ] ) ) {
 			echo json_encode( $presets[ $name ] );
